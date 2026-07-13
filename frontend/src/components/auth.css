@@ -1,0 +1,212 @@
+/* DESIGN SYSTEM VARIABLES - AMBIENT INDUSTRIAL THEME */
+:root {
+  --app-bg: #ffffff;
+  --panel-bg: #ffffff;
+  --accent-neon: #7c3aed;       /* High-energy electric violet indicator */
+  --accent-neon-glow: rgba(124, 58, 237, 0.06);
+  --text-dark: #000000;
+  --text-soft: #666666;
+  --border-delicate: #e5e5e5;
+  --border-focus: #111111;
+}
+
+/* RESET & SCREEN SETUP */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--app-bg);
+  /* Top left structural grid decor accent */
+  background-image: linear-gradient(var(--border-delicate) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--border-delicate) 1px, transparent 1px);
+  background-size: 100px 100px;
+  position: relative;
+  padding: 2rem;
+}
+
+/* Floating aesthetic blur rings */
+.auth-container::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* THE FLOATING INTERACTIVE FRAME */
+.auth-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--text-dark); /* Crisp high-contrast thin border edge */
+  padding: 3.5rem 3rem;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 12px 12px 0px var(--text-dark); /* Retro structural pop shadow */
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.auth-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 14px 14px 0px var(--text-dark);
+}
+
+.auth-card h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--text-dark);
+  text-align: left;
+  margin-bottom: 2.5rem;
+  text-transform: lowercase; /* Clean developer-centric styling look */
+}
+
+.auth-card h2::after {
+  content: ".";
+  color: var(--accent-neon);
+}
+
+/* COMPACT FORMS & TYPOGRAPHY */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-delicate);
+  background-color: #fafafa;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 0px; /* Stripped roundness for strict clean linear look */
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.auth-input:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: var(--border-focus);
+  box-shadow: inset 0 0 0 1px var(--border-focus);
+}
+
+.auth-input::placeholder {
+  color: #a3a3a3;
+  font-size: 0.9rem;
+}
+
+/* CORE INTERACTIVE ACTION ELEMENT */
+.auth-button {
+  width: 100%;
+  padding: 1.1rem;
+  background-color: var(--text-dark);
+  color: #ffffff;
+  border: none;
+  border-radius: 0px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s;
+}
+
+.auth-button:hover {
+  background-color: var(--accent-neon);
+}
+
+/* MINIMAL DIVIDER LABELS */
+.social-divider {
+  position: relative;
+  text-align: center;
+  margin: 2.5rem 0 1.5rem 0;
+  border-bottom: 1px solid var(--border-delicate);
+}
+
+.social-divider::before {
+  content: "connect verification via";
+  position: absolute;
+  top: -9px;
+  left: 0;
+  background: var(--panel-bg);
+  padding-right: 0.75rem;
+  color: #a3a3a3;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* SYMMETRIC INTEGRATED SOCIAL WRAPPERS */
+.social-icons-wrapper {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.social-icon-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  border: 1px solid var(--border-delicate);
+  background: #ffffff;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-icon-btn:hover {
+  border-color: var(--text-dark);
+  background-color: #fafafa;
+}
+
+/* AUTH RE-ROUTING FOOTERS */
+.auth-footer {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  text-align: left;
+  font-weight: 500;
+  border-top: 1px dashed var(--border-delicate);
+  padding-top: 1.5rem;
+}
+
+.auth-link {
+  color: var(--accent-neon);
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 0.25rem;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* SCREEN SCALING BREAKPOINTS */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 1rem;
+    background-image: none;
+  }
+  .auth-card {
+    padding: 2.5rem 1.5rem;
+    box-shadow: 6px 6px 0px var(--text-dark);
+  }
+}

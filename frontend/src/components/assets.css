@@ -1,0 +1,234 @@
+.properties-page-workspace {
+  padding: 24px;
+  font-family: sans-serif;
+  color: #333;
+}
+
+.properties-header-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Adjusted from flex-start to align elements beautifully */
+  margin-bottom: 24px;
+}
+
+.title-block h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.description-text {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.add-property-action-btn {
+  background-color: #2563eb; /* Changed from deep green to sleek AI Blue */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px; /* Smoother curve design */
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.add-property-action-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* 2 Separate Metric Blocks Grid Layout */
+.metrics-dashboard-row-grid {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.metric-card-box {
+  flex: 1;
+  background: #ffffff; /* Shifted to clean crisp white background */
+  border: 1px solid #eef0f2;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.metric-card-box label {
+  font-size: 11px;
+  color: #64748b; /* Shifted to a clearer slate gray for visibility */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.value-display-large {
+  font-size: 26px; /* Slightly scaled up typography weight */
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Asset Container Main Working Panel */
+.properties-content-main-panel {
+  border: 1px solid #eef0f2;
+  border-radius: 8px;
+  background: #fff;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/* Table Layout for Populated Asset Data Lists */
+.properties-table-wrapper-view {
+  width: 100%;
+  overflow-x: auto;
+  align-self: flex-start; /* Ensures proper container formatting */
+}
+
+.custom-portfolio-datatable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.custom-portfolio-datatable th {
+  background-color: #f8fafc;
+  color: #64748b;
+  font-weight: 600;
+  padding: 14px 16px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.custom-portfolio-datatable td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  vertical-align: middle;
+}
+
+/* Empty State Canvas Styling */
+.empty-state-canvas {
+  color: #64748b;
+  font-size: 14px;
+  padding: 32px;
+}
+
+.empty-state-canvas h3 {
+  margin: 0 0 8px 0;
+  color: #1e293b;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.empty-state-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.risk-highlight {
+  font-weight: 600;
+  color: #d97706; /* High contrast amber tint */
+}
+
+/* Modal Popup Core Structures */
+.modal-backdrop-blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.4); /* Darker overlay mask */
+  backdrop-filter: blur(4px); /* Modern frosted blur styling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content-card-box {
+  background: white;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header-row h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.modal-close-dismiss-cross-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: color 0.15s ease;
+}
+
+.modal-close-dismiss-cross-btn:hover {
+  color: #334155;
+}
+
+.modal-form-body-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Added minor space cushioning to support 5 inputs cleanly */
+}
+
+.form-input-field-group input,
+.form-input-field-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #1e293b;
+  background-color: #ffffff;
+  transition: border-color 0.15s ease;
+}
+
+.form-input-field-group input:focus,
+.form-input-field-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-save-submit-btn-cta {
+  background-color: #2563eb; 
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.form-save-submit-btn-cta:hover {
+  background-color: #1d4ed8;
+}
+
+.form-save-submit-btn-cta:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}

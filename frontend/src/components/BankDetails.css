@@ -1,0 +1,105 @@
+.bank-details-page {
+  background: #f1f5f9;
+  min-height: 100vh;
+  padding: 30px;
+  font-family: 'Inter', sans-serif;
+}
+
+.bank-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.back-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.back-circle:hover { background: #3b82f6; color: white; }
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 25px;
+  height: calc(100vh - 150px);
+}
+
+/* Console Panel (Left) */
+.console-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chat-preview-card {
+  background: #1e293b;
+  color: #94a3b8;
+  padding: 20px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.chat-preview-card span { color: #3b82f6; font-weight: bold; }
+
+.input-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+}
+
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: #64748b; margin-bottom: 6px; }
+
+.input-card input, .input-card select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  outline: none;
+}
+
+.primary-action-btn {
+  width: 100%;
+  padding: 14px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-action-btn:hover { background: #2563eb; transform: translateY(-2px); }
+
+/* Status Cards */
+.status-card { padding: 20px; border-radius: 16px; animation: slideIn 0.4s ease; }
+.status-card.eligible { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.status-card.not { background: #fee2e2; color: #991b1b; }
+
+/* Map Panel (Right) */
+.map-view-container {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+  border: 4px solid white;
+}
+
+.leaflet-container-main { height: 100%; width: 100%; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

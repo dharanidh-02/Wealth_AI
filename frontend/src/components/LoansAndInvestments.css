@@ -1,0 +1,468 @@
+/* ==========================================================================
+   1. GLOBAL CONTAINER & LAYOUT STRUCTURE
+   ========================================================================== */
+.loans-container {
+  padding: 28px;
+  max-width: 1320px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1e293b;
+  background-color: #fafafa;
+}
+
+.loans-header {
+  margin-bottom: 28px;
+  border-left: 4px solid #800020; /* IDBI Primary Deep Maroon Accent Line */
+  padding-left: 16px;
+}
+
+.loans-header .subtitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #800020; /* IDBI Maroon */
+  letter-spacing: 0.08em;
+}
+
+.loans-header .title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 4px 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.loans-header .description {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+/* ==========================================================================
+   2. INTERACTIVE SUB-NAVIGATION TABS (IDBI BRANDED)
+   ========================================================================== */
+.tabs-container {
+  display: flex;
+  gap: 12px;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 28px;
+  padding-bottom: 2px;
+}
+
+.tab-btn {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #64748b;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.tab-btn:hover {
+  color: #800020;
+  background-color: #f8fafc;
+  border-radius: 6px 6px 0 0;
+}
+
+.tab-btn.active {
+  color: #800020; /* IDBI Primary Corporate Accent */
+  font-weight: 700;
+  border-bottom: 3px solid #800020;
+}
+
+/* ==========================================================================
+   3. WORKSPACE FORM DISPLAY DIVISION
+   ========================================================================== */
+.workspace-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .workspace-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.control-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-select, .form-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  color: #0f172a;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.form-select {
+  appearance: none;
+  padding-right: 40px;
+}
+
+.form-select:focus, .form-input:focus {
+  border-color: #800020;
+  box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.12);
+}
+
+.select-icon {
+  position: absolute;
+  right: 14px;
+  width: 18px;
+  height: 18px;
+  color: #64748b;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   4. CHECKBOX LIST VARIANT GROUPS
+   ========================================================================== */
+.checkbox-list {
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.checkbox-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.checkbox-row:last-child {
+  border-bottom: none;
+}
+
+.checkbox-row:hover {
+  background-color: #f8fafc;
+}
+
+.checkbox-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.custom-checkbox.checked {
+  background-color: #800020; /* IDBI Primary Corporate Accent */
+  border-color: #800020;
+}
+
+.check-icon {
+  width: 14px;
+  height: 14px;
+  color: #ffffff;
+  stroke-width: 3.5px;
+}
+
+.bank-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.bank-rating {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #eab308;
+}
+
+/* ==========================================================================
+   5. CTA ACTION BUTTONS
+   ========================================================================== */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #800020; /* IDBI Brand Crimson */
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(128, 0, 32, 0.2);
+  transition: all 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #600018;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(128, 0, 32, 0.3);
+}
+
+.display-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   6. METRIC DISPLAY PROFILE BANNERS
+   ========================================================================== */
+.profile-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #008080; /* IDBI Secondary Teal Green Accent */
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.card-subtitle {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.scenario-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+.scenario-title h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.scenario-title .tenure {
+  color: #64748b;
+}
+
+.dot {
+  color: #94a3b8;
+  font-weight: bold;
+}
+
+.income-note {
+  font-size: 0.9rem;
+  color: #475569;
+  margin: 0;
+}
+
+.highlight-text {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.best-emi-badge {
+  background-color: #e6f2f2; /* Light Teal Tint */
+  color: #008080; /* IDBI Teal Green */
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 128, 128, 0.15);
+}
+
+/* ==========================================================================
+   7. INTERACTIVE DATA CARD GRID
+   ========================================================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 24px;
+}
+
+.bank-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bank-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(128, 0, 32, 0.3);
+  box-shadow: 0 12px 20px -8px rgba(128, 0, 32, 0.15);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card-bank-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.card-bank-details {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 6px 0 0 0;
+}
+
+.affordable-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #e6f2f2; /* Light Teal Tint */
+  color: #008080; /* IDBI Teal Green Accent */
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.tag-check {
+  width: 14px;
+  height: 14px;
+  stroke-width: 3.5px;
+}
+
+/* ==========================================================================
+   8. QUANTITATIVE MEASUREMENT BLOCKS
+   ========================================================================== */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.metric-box {
+  background-color: #f8fafc;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f1f5f9;
+}
+
+.metric-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.metric-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   9. EXTERNAL REDIRECT ROUTING WRAPPERS
+   ========================================================================== */
+.card-footer {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #800020; /* Deep Maroon Interaction Color */
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.external-link:hover {
+  color: #008080; /* Shifts to Teal Green on interactive hover states */
+  text-decoration: none;
+}
+
+.link-icon {
+  width: 15px;
+  height: 15px;
+}
+
+/* ==========================================================================
+   10. INVESTMENTS PANEL GRID MODIFICATIONS
+   ========================================================================== */
+.investments-workspace {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.investments-workspace .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)) !important;
+  gap: 24px;
+  width: 100%;
+}
+
+.investments-workspace .metric-box {
+  min-height: 56px;
+  justify-content: space-between;
+}

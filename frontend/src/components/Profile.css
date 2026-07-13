@@ -1,0 +1,468 @@
+/* ==========================================================================
+   1. SHARED DESIGN SYSTEM & KEY ANIMATIONS
+   ========================================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes backdropBlurIn {
+  from { backdrop-filter: blur(0px); background: rgba(15, 23, 42, 0); }
+  to { backdrop-filter: blur(8px); background: rgba(15, 23, 42, 0.45); }
+}
+
+/* ==========================================================================
+   2. ENTRY SELECTION SLOT VIEW (BEFORE ENTERING CONFIGURATION)
+   ========================================================================== */
+.prompt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: backdropBlurIn 0.4s forwards;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.prompt-container {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 680px;
+  width: 100%;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.15);
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  text-align: center;
+}
+
+.prompt-header-box {
+  margin-bottom: 32px;
+}
+
+.prompt-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px 0;
+}
+
+.prompt-subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* SELECTION OPTIONS LAYOUT SLOTS */
+.options-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .options-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.option-card {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.option-card:hover {
+  background: #ffffff;
+  border-color: #15803d; /* brand theme emerald green accent */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(21, 128, 61, 0.12);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all 0.25s ease;
+}
+
+.option-card:hover .card-icon {
+  background: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.option-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  text-transform: capitalize;
+}
+
+.option-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.4;
+  margin: 0 0 20px 0;
+  min-height: 40px;
+}
+
+.card-btn {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background-color: #15803d;
+  color: #ffffff;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: background-color 0.15s ease;
+}
+
+.card-btn:hover {
+  background-color: #166534;
+}
+
+.card-btn.secondary {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.option-card:hover .card-btn.secondary {
+  background-color: #15803d;
+  color: #ffffff;
+  border-color: #15803d;
+}
+
+
+/* ==========================================================================
+   3. CORE PROFILE REGISTRATION SYSTEM (MAIN FORM VIEW)
+   ========================================================================== */
+.profile-page-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.profile-container.form-view {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  max-width: 760px;
+  width: 100%;
+  padding: 40px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.form-header {
+  margin-bottom: 32px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 24px;
+}
+
+.meta-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.form-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px 0;
+}
+
+.sub-instruction-text {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* GRID INPUT STRUCTURING */
+.profile-box-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 20px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  .profile-box-grid {
+    grid-template-columns: 1fr;
+    gap: 16px 0;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.input-group input, 
+.input-group select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: #0f172a;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.15s ease;
+}
+
+.input-group input::placeholder {
+  color: #94a3b8;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+  border-color: #15803d;
+  box-shadow: 0 0 0 4px rgba(21, 128, 61, 0.1);
+}
+
+/* CUSTOM DROPDOWN SELECT WRAPPERS */
+.select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select-wrapper select {
+  appearance: none;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* FORM SUBMISSION BUTTON PANEL */
+.form-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #0f172a; /* Slate corporate black variant button layer */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.form-submit-btn:hover {
+  background-color: #1e293b;
+}
+/* ==========================================================================
+   4. NEW WELCOME SELECTION LAYOUT COMPATIBILITY LAYER
+   ========================================================================== */
+
+/* Full view flex layout backdrop mapping */
+.welcome-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Modal layout base container cards styling */
+.welcome-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 720px;
+  width: 100%;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  text-align: center;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px 0;
+}
+
+.welcome-subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 32px 0;
+}
+
+/* Two-column option layout rules setup */
+.selection-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .selection-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Choice card selection block layout structure styles */
+.option-box {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.option-box:hover {
+  background: #ffffff;
+  border-color: #15803d; /* brand theme emerald green accent */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(21, 128, 61, 0.12);
+}
+
+/* Active Highlight border selector modifier */
+.option-box.active-border {
+  border-color: #15803d;
+  background-color: #f8fafc;
+}
+
+.option-content {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Circular vector container frames formatting */
+.option-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+  transition: all 0.25s ease;
+}
+
+.option-box:hover .option-icon {
+  background: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.option-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  text-transform: capitalize;
+}
+
+.option-description {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 40px;
+}
+
+/* Action button templates wrapper overrides */
+.btn {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: #15803d;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #166534;
+}
+
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.option-box:hover .btn-secondary {
+  background-color: #15803d;
+  color: #ffffff;
+  border-color: #15803d;
+}
