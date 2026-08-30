@@ -1,1 +1,1 @@
-Wealth
+Wealth AI
